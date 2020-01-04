@@ -1,0 +1,66 @@
+{
+  "name": "product-info",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.5.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "moment": "^2.24.0",
+    "mongodb": "^3.4.1",
+    "mysql": "^2.17.1",
+    "path": "^0.12.7",
+    "pg": "^7.17.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack -d --watch & live-server --port=9000 --watch=dist --open=dist",
+    "build": "NODE_ENV=production webpack -p",
+    "deploy": "aws s3 sync build/ s3://fec-sdc-capstone-client",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000/",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^3.2.1",
+    "eslint": "^6.7.2",
+    "file-loader": "^5.0.2",
+    "image-webpack-loader": "^6.0.0",
+    "less": "^3.10.3",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
