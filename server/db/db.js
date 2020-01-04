@@ -21,12 +21,14 @@ const connection = new Client(pgConfig);
 connection.connect();
 
 let getProduct = itemToReturn => {
-  // let pgItemToReturn = Math.floor(Math.random() * 1000000 + 1);
+  let pgItemToReturn = Math.floor(Math.random() * 1000000 + 1);
   // let mongoDbItemToReturn = faker.commerce.productName();
   // below is for postgres
   return new Promise((resolve, reject) => {
     connection.query(
       `SELECT * FROM westbuyproductinfoproducts WHERE id=${itemToReturn}`,
+      // Above is for production, below is for battery testing
+      // `SELECT * FROM westbuyproductinfoproducts WHERE id=${pgItemToReturn}`,
       (error, result) => {
         if (error) {
           reject(error);
