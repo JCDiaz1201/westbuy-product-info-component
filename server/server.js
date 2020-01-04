@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 // });
 
 app.get("/getproduct", (req, res) => {
+  console.log(fire);
   db.getProduct(req.query.selectedItemId)
     .then(msg => {
       res.send(msg);

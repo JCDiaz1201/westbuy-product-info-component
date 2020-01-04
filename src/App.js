@@ -37,11 +37,15 @@ class App extends React.Component {
     event.preventDefault();
 
     axios
-      .get("http://localhost:5000/getproduct", {
-        params: {
-          selectedItemId: this.state.searchItem
+      // .get("http://18.191.28.180:5000/getproduct", {
+      .get(
+        "https://ec2-18-191-28-180.us-east-2.compute.amazonaws.com/getproduct",
+        {
+          params: {
+            selectedItemId: this.state.searchItem
+          }
         }
-      })
+      )
       .then(response => {
         if (response.data.length > 0) {
           this.setState({ selectedProduct: response.data[0] });

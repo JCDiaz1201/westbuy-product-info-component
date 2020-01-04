@@ -1,7 +1,6 @@
 import React from "react";
 
 const ProductInfo = props => {
-  console.log(props);
   return (
     <div className="product-info-column-one">
       <h1 className="product-title">{props.productInfoProp.productname}</h1>
