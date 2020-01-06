@@ -7,15 +7,14 @@ const app = express();
 const port = 5000;
 
 app.use(cors());
-app.use(express.static("public"));
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "../dist", "index.html"));
+});
 
 app.get("/getproduct", (req, res) => {
-  console.log(fire);
   db.getProduct(req.query.selectedItemId)
     .then(msg => {
       res.send(msg);

@@ -11,14 +11,17 @@ const Product = props => {
           <ProductInfoDirectory
             productInfoDirectoryProp={props.selectedProductProp}
           />
+
           <div className="product-links">
             <button className="product-links-share">Share</button>
             <button className="product-links-print">Print</button>
           </div>
         </div>
+
         <div id="product-info-id">
           <ProductInfo productInfoProp={props.selectedProductProp} />
         </div>
+
         <div id="product-info-cart-id">
           <ProductInfoCart
             productInfoCartProp={props.selectedProductProp}

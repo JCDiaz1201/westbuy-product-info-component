@@ -39,7 +39,7 @@ class App extends React.Component {
     axios
       // .get("http://18.191.28.180:5000/getproduct", {
       .get(
-        "https://ec2-18-191-28-180.us-east-2.compute.amazonaws.com/getproduct",
+        "http://ec2-3-136-158-89.us-east-2.compute.amazonaws.com/getproduct",
         {
           params: {
             selectedItemId: this.state.searchItem
